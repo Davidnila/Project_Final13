@@ -14,7 +14,9 @@ spec:
     spec:
       containers:
         - name: company-profile
-          image: company-profile:latest
-          imagePullPolicy: Never
+          image: 10.252.10.21:5000/company-profile:latest
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
+      imagePullSecrets:
+        - name: nexus-creds
